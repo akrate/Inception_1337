@@ -5,6 +5,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY tools/script.sh /script.sh
+COPY conf/maria.conf /etc/mysql/mariadb.conf.d/
 
 RUN chmod +x /script.sh
 
