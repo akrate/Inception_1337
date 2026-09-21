@@ -11,7 +11,7 @@ chown -R mysql:mysql /var/lib/mysql
 if [ ! -d "/var/lib/mysql/$MYSQL_DATABASE" ]; then
     echo "Initializing MariaDB for the first time..."
 
-    mariadb-install-db --user=mysql --datadir=/var/lib/mysql > /dev/null
+    mariadb-install-db --user=mysql --datadir=/var/lib/mysql --skip-test-db > /dev/null
 
     mysqld_safe --user=mysql --datadir=/var/lib/mysql --skip-networking &
     pid="$!"
@@ -20,7 +20,7 @@ if [ ! -d "/var/lib/mysql/$MYSQL_DATABASE" ]; then
         sleep 1
     done
 
-    # جميع الأوامر كتنفذ فـ session واحدة قبل ما يتقفل الـ root
+    # Execute all commands in a single session before closing root
     mariadb -u root -e "
     FLUSH PRIVILEGES;
     CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;
@@ -29,7 +29,7 @@ if [ ! -d "/var/lib/mysql/$MYSQL_DATABASE" ]; then
     FLUSH PRIVILEGES;
     "
 
-    # إغلاق السيرفر المؤقت بكلمة سر root الجديدة
+    # Shutdown temporary server with new root password
     mariadb-admin -u root -p"${ROOT_PASS}" shutdown
     wait "$pid"
 

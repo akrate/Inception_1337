@@ -6,7 +6,7 @@ CONFIG_FILE="$WP_PATH/wp-config.php"
 
 DB_PASSWORD=$(cat /run/secrets/db_password)
 ADMIN_PASSWORD=$(cat /run/secrets/wp_admin_password)
-WP_USER_PASSWORD=$(grep wp_user /run/secrets/credentials | cut -d = -f2)
+WP_USER_PASSWORD=$(cat /run/secrets/credentials)
 
 echo "Connecting to MariaDB..."
 until mariadb-admin ping -h"mariadb" -u"$MYSQL_USER" -p"$DB_PASSWORD" --silent; do
@@ -43,13 +43,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
         --user_pass="${WP_USER_PASSWORD}" \
         --allow-root
 
-    if [ -n "$REDIS_HOST" ]; then
-        echo "Configuring Redis cache..."
-        wp config set WP_REDIS_HOST "$REDIS_HOST" --path="$WP_PATH" --allow-root
-        wp config set WP_REDIS_PORT 6379 --raw --path="$WP_PATH" --allow-root
-        wp plugin install redis-cache --activate --path="$WP_PATH" --allow-root
-        wp redis enable --path="$WP_PATH" --allow-root
-    fi
+    # Redis configuration removed as it's part of the bonus section
 
     chown -R www-data:www-data "$WP_PATH"
     chmod -R 755 "$WP_PATH"
@@ -58,4 +52,4 @@ fi
 
 mkdir -p /run/php
 
-exec php-fpm7.4 -F
+exec php-fpm8.2 -F

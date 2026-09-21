@@ -82,10 +82,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/aoussama/data/mariadb
+      device: /home/oussama/data/mariadb
   wordpress_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/aoussama/data/wordpress
+      device: /home/oussama/data/wordpress

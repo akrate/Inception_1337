@@ -1,6 +1,6 @@
 NAME = inception
 COMPOSE_FILE = ./srcs/docker-compose.yml
-DATA_DIR = /home/aoussama/data
+DATA_DIR = /home/oussama/data
 
 all: up
 
