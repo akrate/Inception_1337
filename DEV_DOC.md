@@ -115,8 +115,8 @@ docker volume rm mariadb_data wordpress_data
 ## Data Persistence
 
 ### Volume Locations
-- Database data: `/home/oussama/data/mariadb/`
-- WordPress files: `/home/oussama/data/wordpress/`
+- Database data: `/home/aoussama/data/mariadb/`
+- WordPress files: `/home/aoussama/data/wordpress/`
 
 ### Backup Data
 ```bash
@@ -124,7 +124,7 @@ docker volume rm mariadb_data wordpress_data
 docker exec mariadb mysqldump -u wp_user -p wordpress > backup.sql
 
 # Backup WordPress files
-cp -r /home/oussama/data/wordpress/ wordpress-backup/
+cp -r /home//data/wordpress/ wordpress-backup/
 ```
 
 ### Restore Data
@@ -133,7 +133,7 @@ cp -r /home/oussama/data/wordpress/ wordpress-backup/
 cat backup.sql | docker exec -i mariadb mariadb -u wp_user -p wordpress
 
 # Restore WordPress files
-cp -r wordpress-backup/* /home/oussama/data/wordpress/
+cp -r wordpress-backup/* /home/aoussama/data/wordpress/
 ```
 
 ## Development Workflow

@@ -9,7 +9,7 @@ ADMIN_PASSWORD=$(cat /run/secrets/wp_admin_password)
 WP_USER_PASSWORD=$(cat /run/secrets/credentials)
 
 echo "Connecting to MariaDB..."
-until mariadb-admin ping -h"mariadb" -u"$MYSQL_USER" -p"$DB_PASSWORD" --silent; do
+until mariadb-admin ping -h"mariadb" -u"$MYSQL_USER" -p"$DB_PASSWORD"; do
     sleep 2
 done
 echo "MariaDB is ready!"
@@ -24,7 +24,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
         --dbname="${MYSQL_DATABASE}" \
         --dbuser="${MYSQL_USER}" \
         --dbpass="${DB_PASSWORD}" \
-        --dbhost="mariadb:3306" \
+        --dbhost="mariadb" \
         --allow-root
 
     wp core install \
@@ -46,7 +46,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     # Redis configuration removed as it's part of the bonus section
 
     chown -R www-data:www-data "$WP_PATH"
-    chmod -R 755 "$WP_PATH"
+    chmod -R 757 "$WP_PATH"
     echo "WordPress installed successfully."
 fi
 

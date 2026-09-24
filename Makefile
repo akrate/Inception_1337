@@ -1,10 +1,10 @@
 NAME = inception
 COMPOSE_FILE = ./srcs/docker-compose.yml
-DATA_DIR = /home/oussama/data
+# DATA_DIR = /home/oussama/data
 
-all: up
-
-up: create_dirs
+all:
+	@mkdir -p /home/aoussama/data/wordpress
+	@mkdir -p /home/aoussama/data/mariadb
 	docker compose -f $(COMPOSE_FILE) --env-file ./srcs/.env up -d --build
 
 down:
@@ -22,14 +22,14 @@ restart:
 clean: down
 	docker system prune -a --force
 
-fclean:
+fclean: clean
 	docker compose -f $(COMPOSE_FILE) down -v --rmi all
-	sudo rm -rf $(DATA_DIR)/mariadb/* $(DATA_DIR)/wordpress/*
+# 	sudo rm -rf $(DATA_DIR)/mariadb/* $(DATA_DIR)/wordpress/*
 
 re: fclean all
 
-create_dirs:
-	@mkdir -p $(DATA_DIR)/mariadb
-	@mkdir -p $(DATA_DIR)/wordpress
+# create_dirs:
+# 	@mkdir -p $(DATA_DIR)/mariadb
+# 	@mkdir -p $(DATA_DIR)/wordpress
 
-.PHONY: all up down start stop restart clean fclean re create_dirs
+.PHONY: all up down start stop restart clean fclean re 

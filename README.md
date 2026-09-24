@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by oussama*
+*This project has been created as part of the 42 curriculum by aoussama*
 
 # Inception Project
 
@@ -22,7 +22,7 @@ The infrastructure includes:
 1. Clone the repository
 2. Navigate to the project root directory
 3. Run `make` or `make up` to build and start all containers
-4. Access the website at `https://oussama.42.fr`
+4. Access the website at `https://aoussama.42.fr`
 
 ### Management Commands
 - `make up` - Build and start containers

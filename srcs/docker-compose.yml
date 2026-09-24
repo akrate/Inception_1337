@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mariadb:
     build:
@@ -60,7 +58,7 @@ services:
     ports:
       - "443:443"
     volumes:
-      - wordpress_data:/var/www/html:ro
+      - wordpress_data:/var/www/html
 
 networks:
   inception-net:
@@ -82,10 +80,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/oussama/data/mariadb
+      device: /home/aoussama/data/mariadb
   wordpress_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/oussama/data/wordpress
+      device: /home/aoussama/data/wordpress

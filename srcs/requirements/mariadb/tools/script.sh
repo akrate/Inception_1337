@@ -16,15 +16,14 @@ if [ ! -d "/var/lib/mysql/$MYSQL_DATABASE" ]; then
     mysqld_safe --user=mysql --datadir=/var/lib/mysql --skip-networking &
     pid="$!"
 
-    until mariadb-admin ping --silent; do
+    until mariadb-admin ping; do
         sleep 1
     done
-
+    echo "Heeeeeeeeere"
     # Execute all commands in a single session before closing root
     mariadb -u root -e "
-    FLUSH PRIVILEGES;
     CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\`;
-    GRANT ALL PRIVILEGES ON \`${MYSQL_DATABASE}\`.* TO '${MYSQL_USER}'@'\%' IDENTIFIED BY '${DB_PASS}';
+    GRANT ALL PRIVILEGES ON \`${MYSQL_DATABASE}\`.* TO '${MYSQL_USER}'@'%' IDENTIFIED BY '${DB_PASS}';
     ALTER USER 'root'@'localhost' IDENTIFIED BY '${ROOT_PASS}';
     FLUSH PRIVILEGES;
     "
