@@ -1,0 +1,181 @@
+/* Adminer Custom Styles */
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#content {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 30px;
+}
+
+#menu {
+    background: #2d3748;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#menu h1 {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+#menu a {
+    color: #a0aec0;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+#menu a:hover {
+    background: #4a5568;
+    color: white;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin: 20px 0;
+}
+
+th {
+    background: #4a5568;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover td {
+    background: #f7fafc;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="submit"],
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sqlarea {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+    background: #f8fafc;
+}
+
+.message {
+    background: #c6f6d5;
+    color: #22543d;
+    border: 1px solid #9ae6b4;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.error {
+    background: #fed7d7;
+    color: #742a2a;
+    border: 1px solid #fc8181;
+    border-radius: 6px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+/* Login form customization */
+#form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#form table {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#form th {
+    background: transparent;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+#form input[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #content {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    #menu {
+        text-align: center;
+    }
+    
+    #menu h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+}

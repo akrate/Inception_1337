@@ -43,7 +43,19 @@ if [ ! -f "$CONFIG_FILE" ]; then
         --user_pass="${WP_USER_PASSWORD}" \
         --allow-root
 
-    # Redis configuration removed as it's part of the bonus section
+    # Configure Redis cache for WordPress
+    echo "Configuring Redis cache..."
+    wp config set WP_REDIS_HOST "${REDIS_HOST:-redis}" --path="$WP_PATH" --allow-root
+    wp config set WP_REDIS_PORT "6379" --raw --path="$WP_PATH" --allow-root
+    wp config set WP_REDIS_TIMEOUT "1" --raw --path="$WP_PATH" --allow-root
+    wp config set WP_REDIS_READ_TIMEOUT "1" --raw --path="$WP_PATH" --allow-root
+    wp config set WP_CACHE_KEY_SALT "${DOMAIN_NAME}" --path="$WP_PATH" --allow-root
+    
+    # Install and activate Redis cache plugin
+    wp plugin install redis-cache --activate --path="$WP_PATH" --allow-root
+    wp redis enable --path="$WP_PATH" --allow-root
+    
+    echo "Redis cache configured successfully."
 
     chown -R www-data:www-data "$WP_PATH"
     chmod -R 757 "$WP_PATH"

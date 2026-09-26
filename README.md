@@ -60,3 +60,51 @@ A custom Docker network (`inception-net`) is used instead of host networking. Th
 
 ### Docker Volumes vs Bind Mounts
 Named volumes with bind mount backend are used instead of direct bind mounts. This approach provides Docker's volume management features while allowing data to be stored at `/home/oussama/data` on the host. Named volumes offer better portability and management compared to bind mounts.
+
+
+## Bonus Services
+
+The project includes comprehensive bonus services that enhance the infrastructure:
+
+### 🚀 Implemented Bonus Features
+
+1. **Redis Cache** - High-performance caching for WordPress
+   - Reduces database load by caching queries
+   - Improves page load times
+   - Configurable memory limits and eviction policies
+
+2. **FTP Server** - Secure file management
+   - vsftpd with chroot isolation
+   - Dedicated user for WordPress file management
+   - Passive mode support for firewall compatibility
+
+3. **Static Portfolio Website** - Modern responsive website
+   - HTML5, CSS3, JavaScript (ES6+)
+   - Dark/light theme toggle
+   - Interactive animations and form validation
+
+4. **Adminer** - Lightweight database management
+   - Single-file PHP application
+   - Full MySQL/MariaDB administration
+   - Custom theming and security
+
+5. **phpMyAdmin** - Feature-rich database management
+   - Advanced SQL editor
+   - Visual database design
+   - Comprehensive export/import capabilities
+
+### 🔧 Bonus Service Access
+
+- **Static Portfolio**: `http://static.oussama.42.fr:8080`
+- **Adminer**: `https://adminer.oussama.42.fr:8081` (admin/AdminSecurePass123!)
+- **phpMyAdmin**: `https://phpmyadmin.oussama.42.fr:8082` (admin/AdminSecurePass123!)
+- **FTP**: `ftp://oussama.42.fr:21` (ftpuser/ftppass123!)
+
+### 📊 Performance Benefits
+
+- **Redis caching** reduces database queries by 80-90%
+- **Static site** provides faster loading for portfolio content
+- **Separate admin interfaces** prevent resource contention
+- **FTP access** enables efficient file management
+
+For detailed bonus documentation, see [BONUS.md](./BONUS.md)

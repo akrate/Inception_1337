@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oussama - Portfolio & Showcase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">oussama<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">oussama</span></h1>
+                <p class="hero-subtitle">System Administrator & DevOps Enthusiast</p>
+                <p class="hero-description">Specializing in Docker, infrastructure automation, and cloud technologies.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-block">
+                    <pre><code class="language-bash">$ docker-compose up -d
+Starting infrastructure...
+✓ NGINX container running
+✓ WordPress container running  
+✓ MariaDB container running
+✓ Redis cache enabled
+✓ Services ready at oussama.42.fr</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate system administration student at 42 Network, currently working on the Inception project which involves building a complete Docker-based infrastructure.</p>
+                    <p>My expertise includes containerization with Docker, Linux system administration, network configuration, and DevOps practices.</p>
+                    <p>This static website is part of the Inception project bonus section, showcasing my skills in web development and infrastructure deployment.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <i class="fas fa-server"></i>
+                        <h3>5+</h3>
+                        <p>Containers Managed</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-code"></i>
+                        <h3>42</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-clock"></i>
+                        <h3>24/7</h3>
+                        <p>Infrastructure Uptime</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-docker"></i>
+                    <h3>Docker & Containers</h3>
+                    <p>Container orchestration, Docker Compose, multi-service architectures</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking</h3>
+                    <p>TCP/IP, DNS, SSL/TLS, reverse proxy configuration</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux Administration</h3>
+                    <p>Debian/Ubuntu, systemd, bash scripting, security hardening</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Databases</h3>
+                    <p>MariaDB/MySQL administration, backup strategies, optimization</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Technologies</h3>
+                    <p>HTML/CSS/JavaScript, PHP, WordPress, Nginx configuration</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security</h3>
+                    <p>SSL certificates, firewall configuration, secure deployments</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fab fa-docker"></i>
+                        <h3>Inception</h3>
+                    </div>
+                    <p>Complete Docker infrastructure with WordPress, MariaDB, NGINX, Redis, and bonus services.</p>
+                    <div class="project-tech">
+                        <span>Docker</span>
+                        <span>WordPress</span>
+                        <span>MariaDB</span>
+                        <span>Redis</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Container Stack</h3>
+                    </div>
+                    <p>Multi-container application with load balancing, caching, and persistent storage.</p>
+                    <div class="project-tech">
+                        <span>Docker Compose</span>
+                        <span>NGINX</span>
+                        <span>PHP-FPM</span>
+                        <span>Volumes</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-globe"></i>
+                        <h3>This Website</h3>
+                    </div>
+                    <p>Static portfolio website built with HTML, CSS, and JavaScript as part of Inception bonus.</p>
+                    <div class="project-tech">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Responsive</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>oussama@42.fr</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>42 Network</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-project-diagram"></i>
+                        <div>
+                            <h3>Current Project</h3>
+                            <p>Inception - Docker Infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">oussama<span class="dot">.</span></div>
+            <p class="footer-description">System Administration & DevOps Portfolio</p>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-docker"></i></a>
+            </div>
+            <p class="footer-note">This website is part of the Inception project bonus section.</p>
+            <p class="footer-copyright">© 2024 oussama. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
