@@ -136,7 +136,7 @@ if check_file "Makefile"; then
         echo -e "  ${YELLOW}⚠ Makefile missing create_dirs target${NC}"
     fi
     
-    if grep -q "DATA_DIR.*oussama" "Makefile"; then
+    if grep -q "DATA_DIR.*aoussama" "Makefile"; then
         echo -e "  ${GREEN}✓ Makefile uses correct username${NC}"
     else
         echo -e "  ${RED}✗ Makefile has incorrect username${NC}"
@@ -171,11 +171,11 @@ if [ "$all_good" = true ]; then
     echo "Next steps:"
     echo "1. Run 'make' to build and start all services"
     echo "2. Access services at:"
-    echo "   - WordPress: https://oussama.42.fr"
-    echo "   - Static Site: http://static.oussama.42.fr:8080"
-    echo "   - Adminer: https://adminer.oussama.42.fr:8081"
-    echo "   - Portainer: https://portainer.oussama.42.fr:9000"
-    echo "   - FTP: ftp://oussama.42.fr:21"
+    echo "   - WordPress: https://aoussama.42.fr"
+    echo "   - Static Site: http://static.aoussama.42.fr:8080"
+    echo "   - Adminer: https://adminer.aoussama.42.fr:8081"
+    echo "   - Portainer: https://portainer.aoussama.42.fr:9000"
+    echo "   - FTP: ftp://aoussama.42.fr:21"
     echo "3. Use 'make help' for available commands"
 else
     echo -e "${YELLOW}⚠ Some issues found. Please review the output above.${NC}"

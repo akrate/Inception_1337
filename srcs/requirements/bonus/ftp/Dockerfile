@@ -7,12 +7,8 @@ RUN apt-get update && apt-get install -y \
 COPY conf/vsftpd.conf /etc/vsftpd.conf
 COPY tools/script.sh /script.sh
 
-RUN chmod +x /script.sh && \
-    mkdir -p /var/run/vsftpd/empty && \
-    mkdir -p /var/www/html && \
-    useradd -m -d /var/www/html -s /bin/bash ftpuser && \
-    echo "ftpuser:ftppass123!" | chpasswd
+RUN chmod +x /script.sh
 
-EXPOSE 21
+EXPOSE 21 21100-21110
 
 ENTRYPOINT ["/script.sh"]

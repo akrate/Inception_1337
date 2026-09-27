@@ -10,7 +10,7 @@ RUN openssl req -x509 -nodes -days 365 \
     -newkey rsa:2048 \
     -keyout /etc/ssl/private/nginx.key \
     -out /etc/ssl/certs/nginx.crt \
-    -subj "/C=MA/ST=RABAT/L=RABAT/O=42/CN=oussama.42.fr"
+    -subj "/C=MA/ST=RABAT/L=RABAT/O=42/CN=aoussama.42.fr"
 
 # Create basic auth password for admin interfaces
 RUN echo "admin:$(openssl passwd -crypt AdminSecurePass123!)" > /etc/nginx/.htpasswd

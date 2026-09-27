@@ -62,6 +62,8 @@ if [ ! -f "$CONFIG_FILE" ]; then
     echo "WordPress installed successfully."
 fi
 
+chmod -R o+w /var/www/html
+
 mkdir -p /run/php
 
 exec php-fpm8.2 -F
